@@ -2,10 +2,6 @@ FROM mysql:latest
 
 ENV MYSQL_DATABASE ecommerce
 ENV MYSQL_ROOT_PASSWORD=rootpassword
-ENV MYSQL_USER=root
-ENV MYSQL_PASSWORD=rootpassword
-ENV MYSQL_ROOT_HOST=%
-
 COPY ecom.sql /docker-entrypoint-initdb.d/
 
 EXPOSE 3306
