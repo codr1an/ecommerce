@@ -94,7 +94,7 @@ const EditProduct = () => {
             <div>
               {product.imageUrl && (
                 <img
-                  src={require(`../../../../productImages/${product.imageUrl}`)}
+                  src={require(`../../../productImages/${product.imageUrl}`)}
                   alt={product.name}
                   className="prod-img"
                 />

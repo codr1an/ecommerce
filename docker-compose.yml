@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  db:
+    build:
+      context: .
+      dockerfile: codr1an/ecommerce-db
+    container_name: mysql-webshop-db # Set a container name
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "rootpassword" # Set your root password here
+      MYSQL_DATABASE: ecommerce # Your database name
+      MYSQL_USER: root # MySQL user
+      MYSQL_PASSWORD: "rootpassword" # Set your MySQL password here
+    volumes:
+      - db_data:/var/lib/mysql
+
+  backend:
+    build:
+      context: .
+      dockerfile: codr1an/ecommerce-backend
+    container_name: ecommerce_backend
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: codr1an/ecommerce-frontend
+    container_name: ecommerce_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:

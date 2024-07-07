@@ -6,7 +6,7 @@ const ProductImage = ({ product }) => {
         <p>Price: {product.price}€</p>
         {product.imageUrl && (
           <img
-            src={require(`../../../../../productImages/${product.imageUrl}`)}
+            src={require(`../../../../productImages/${product.imageUrl}`)}
             alt={product.name}
           />
         )}

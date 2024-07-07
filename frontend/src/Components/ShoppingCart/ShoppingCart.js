@@ -200,7 +200,7 @@ const ShoppingCart = () => {
             {cart.items.map((item) => (
               <div key={item.id} className="cart-item">
                 <img
-                  src={require(`../../../../productImages/${item.product.imageUrl}`)}
+                  src={require(`../../../productImages/${item.product.imageUrl}`)}
                   alt={item.product.name}
                 />
                 <div className="item-details">

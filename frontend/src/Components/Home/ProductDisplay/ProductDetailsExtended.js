@@ -41,7 +41,7 @@ const ProductDetails = ({ product }) => {
       <div className="product-image">
         {product.imageUrl && (
           <img
-            src={require(`../../../../../productImages/${product.imageUrl}`)}
+            src={require(`../../../../productImages/${product.imageUrl}`)}
             alt={product.name}
           />
         )}
